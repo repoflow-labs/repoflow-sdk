@@ -1,0 +1,15 @@
+{
+  "name": "repoflow-sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for integrating with the RepoFlow protocol on Stellar",
+  "type": "module",
+  "scripts": {
+    "lint": "echo \"No lint configured\" && exit 0",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"No tests configured\" && exit 0",
+    "build": "echo \"No build configured\" && exit 0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
