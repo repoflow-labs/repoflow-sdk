@@ -3,13 +3,41 @@
   "version": "0.1.0",
   "description": "TypeScript SDK for integrating with the RepoFlow protocol on Stellar",
   "type": "module",
+  "main": "dist/repoflow-sdk.cjs",
+  "module": "dist/repoflow-sdk.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/repoflow-sdk.mjs",
+      "require": "./dist/repoflow-sdk.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "lint": "echo \"No lint configured\" && exit 0",
+    "build": "vite build && tsc --declaration --emitDeclarationOnly --outDir dist",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
-    "test": "echo \"No tests configured\" && exit 0",
-    "build": "echo \"No build configured\" && exit 0"
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "typescript": "^5.0.0"
-  }
+    "typescript": "^5.0.0",
+    "vite": "^6.0.0",
+    "vitest": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/repoflow-labs/repoflow-sdk.git"
+  },
+  "keywords": [
+    "stellar",
+    "soroban",
+    "repoflow",
+    "sdk"
+  ],
+  "license": "MIT"
 }
