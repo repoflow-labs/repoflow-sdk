@@ -9,6 +9,11 @@ import type {
   VerifyResult,
 } from './types'
 
+/** Client for interacting with the RepoFlow protocol.
+ *
+ *  Wraps the indexer REST API and Soroban contract calls into a single
+ *  interface for claiming repos, managing splits, funding pools, and
+ *  querying on-chain state. */
 export class RepoFlowClient {
   private config: RepoFlowConfig
 
@@ -79,6 +84,7 @@ export class RepoFlowClient {
     return res.json()
   }
 
+  /** Fetch the dependency tree for a repository. */
   async getDependencyTree(repoId: string): Promise<DependencyNode[]> {
     const res = await fetch(`${this.config.apiUrl}/repos/${repoId}/dependencies`)
     if (!res.ok) {
