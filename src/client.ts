@@ -16,6 +16,8 @@ export class RepoFlowClient {
     this.config = config
   }
 
+  /** Claim a GitHub repo on-chain. Generates a nonce, builds and submits a
+   *  claim transaction via the provided signer, then verifies the claim. */
   async claimRepo(
     githubUrl: string,
     ownerAddress: string,
@@ -33,6 +35,7 @@ export class RepoFlowClient {
     return { txHash, repoId: githubUrlHash }
   }
 
+  /** Register a dependency split configuration for a claimed repository. */
   async setDependencySplit(
     repoId: string,
     deps: SplitEntry[],
@@ -43,6 +46,7 @@ export class RepoFlowClient {
     return this.submitTx(signedXdr)
   }
 
+  /** Fund a repository's split pool with the given token amount. */
   async fundRepo(
     repoId: string,
     tokenAddress: string,
@@ -55,6 +59,7 @@ export class RepoFlowClient {
     return { txHash }
   }
 
+  /** Claim accumulated earnings for a repository owner. */
   async claimEarnings(
     repoId: string,
     ownerAddress: string,
@@ -65,6 +70,7 @@ export class RepoFlowClient {
     return this.submitTx(signedXdr)
   }
 
+  /** Fetch the current funding state for a repository. */
   async getRepoFunding(repoId: string): Promise<RepoFunding> {
     const res = await fetch(`${this.config.apiUrl}/repos/${repoId}/funding`)
     if (!res.ok) {
