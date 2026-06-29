@@ -3,7 +3,14 @@
 TypeScript SDK for integrating with the RepoFlow protocol on Stellar
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/repoflow-labs/repoflow-sdk/actions/workflows/ci.yml/badge.svg)](https://github.com/repoflow-labs/repoflow-sdk/actions/workflows/ci.yml)
 [![Stellar](https://img.shields.io/badge/network-Stellar-black)](https://stellar.org)
+
+## Installation
+
+```bash
+npm install repoflow-sdk
+```
 
 ## Technical Architecture Overview
 
@@ -40,3 +47,7 @@ npm test
 | Testing | Vitest | latest |
 | Bundler | Vite | latest |
 | HTTP Client | Fetch API | native |
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) and our [Code of Conduct](CODE_OF_CONDUCT.md).
