@@ -12,6 +12,7 @@ export default defineConfig({
     rollupOptions: {
       external: [],
     },
+    sourcemap: true,
   },
   test: {
     globals: true,
@@ -21,6 +22,12 @@ export default defineConfig({
       reporter: ['text', 'json', 'html'],
       include: ['src/**/*.ts'],
       exclude: ['src/__tests__/**', 'src/index.ts'],
+      thresholds: {
+        statements: 60,
+        branches: 50,
+        functions: 50,
+        lines: 60,
+      },
     },
   },
 })
