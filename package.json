@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "TypeScript SDK for integrating with the RepoFlow protocol on Stellar",
   "type": "module",
+  "sideEffects": false,
   "main": "dist/repoflow-sdk.cjs",
   "module": "dist/repoflow-sdk.mjs",
   "types": "dist/index.d.ts",
@@ -39,5 +40,10 @@
     "repoflow",
     "sdk"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "RepoFlow Labs",
+  "homepage": "https://github.com/repoflow-labs/repoflow-sdk#readme"
 }
